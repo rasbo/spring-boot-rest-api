@@ -16,4 +16,9 @@ public class GreetingController {
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
+    
+    @RequestMapping("/salut")
+    public Greeting salut(@RequestParam(value="name", defaultValue="Akelius") String name) {
+        return new Greeting(counter.incrementAndGet(),"Salut " + name);
+    }
 }
